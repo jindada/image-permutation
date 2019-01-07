@@ -43,7 +43,9 @@ npm i --save image-permutation
 </script>
 ```
 ## 参数
+
 new ImagePermutation(width, height, backgroundColor, source, config)
+
 |属性|说明|数据类型|默认值|
 |---|---|---|---|
 |width|canvas内部的宽度|`number`|-|
