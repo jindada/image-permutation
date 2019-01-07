@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="result" />
+</body>
+<script src="../lib/image-permutation.umd.js"></script>
+<script>
+    var source = new Image()
+    source.crossOrigin = 'anonymous';
+
+    source.onload = function() {
+        
+        const config = {
+            width: 100,
+            rotate: 0,
+            cross: true,
+            mirror: { // 镜像
+                x: false,
+                y: false
+            },
+            random: {
+                width: 0,
+                rotate: 0
+            },
+            gutter: {
+                horizontal: 20,
+                vertical: 20,
+            }
+        }
+    
+        new ImagePermutation(1000, 1000, '#ff0000', [source], config).draw().then(data => {
+            var result = document.getElementById("result")
+            result.src = data
+        })
+    }
+
+    source.src = "./item.png"
+
+</script>
+</html>
